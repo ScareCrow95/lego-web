@@ -7,7 +7,7 @@ import { useLoader } from '@react-three/fiber'
 import { useFrame } from '@react-three/fiber'
 export const Model = observer(() => {
   const { uiStore } = useStores()
-  const res = useLoader(STLLoader, '/car-dat.stl')
+  const res = useLoader(STLLoader, '/1-dat.stl')
   const ref = useRef()
   useFrame(({ scene }) => {
     if (uiStore.selectedId) {
@@ -31,7 +31,7 @@ export const Model = observer(() => {
           }}
         />
         <meshPhongMaterial
-          color={uiStore.wireframe ? 'black' : '#aaa'}
+          color={'#aaa'}
           opacity={uiStore.wireframe ? 0.2 : uiStore.opacity}
           transparent
           wireframe={uiStore.wireframe}

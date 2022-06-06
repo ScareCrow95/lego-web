@@ -3,6 +3,7 @@ import { observer } from 'mobx-react-lite'
 import { useEffect } from 'react'
 import { BiCube, BiCylinder, BiMove, BiRotateLeft } from 'react-icons/bi'
 import { IoIosResize } from 'react-icons/io'
+import { HiCubeTransparent } from 'react-icons/hi'
 import { useStores } from '../store/rootStore'
 import {
   Slider,
@@ -74,10 +75,20 @@ const UIBottom = observer(() => {
         </Tooltip>
         <Tooltip label='Add Cube Collider'>
           <IconButton
+            mr={2}
             colorScheme='blue'
             icon={<BiCube />}
             onClick={() => {
               uiStore.addCollider('box')
+            }}
+          />
+        </Tooltip>
+        <Tooltip label='Add Cube Collider'>
+          <IconButton
+            colorScheme='blue'
+            icon={<HiCubeTransparent />}
+            onClick={() => {
+              uiStore.wireframe = !uiStore.wireframe
             }}
           />
         </Tooltip>
